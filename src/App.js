@@ -15,7 +15,7 @@ function App() {
             <div>
                 <Route exact path='/' component={HomePage}/>
                 <Route exact path='/shop' component={ShopPage}/>
-                <Route exact path='/signin' component={SignInAndSignOutPage}/>
+                <Route exact path='/signIn' component={SignInAndSignOutPage}/>
             </div>
         </div>
     );
