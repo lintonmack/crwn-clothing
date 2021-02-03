@@ -1,4 +1,5 @@
 import React from 'react';
+import {CustomButton} from "../custom-button/custom-button.component";
 import './collection-item.component.styles.scss';
 
 export const CollectionItem = ({id, name, imageUrl, price}) => (
@@ -8,11 +9,12 @@ export const CollectionItem = ({id, name, imageUrl, price}) => (
             style={{
                 backgroundImage: `url(${imageUrl})`
             }}
-        >
-            <div className="collection-footer">
-                <span className="name"> {name} </span>
-                <span className="price"> {price} </span>
-            </div>
+        />
+        <div className="collection-footer">
+            <span className="name"> {name} </span>
+            <span className="price"> {price} </span>
+
         </div>
+        <CustomButton inverted>ADD TO CART</CustomButton>
     </div>
 )
