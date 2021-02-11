@@ -10,11 +10,12 @@ import CheckoutPage from "./pages/checkout/checkout.component";
 
 import SignInAndSignUpPage from './components/sign-in-and-sign-out/sign-in-and-sign-out.component';
 import Header from './components/header/header.component';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument, addCollectionAndDocuments} from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.actions';
 
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { createStructuredSelector } from "reselect";
+import {map} from "@firebase/util";
 
 class App extends React.Component {
     unsubscribeFromAuth = null;
@@ -35,7 +36,9 @@ class App extends React.Component {
             }
 
             setCurrentUser(userAuth);
-            addCollectionAndDocuments('collections', collectionsArray.map(({title, items}) => ({title, items})));
+            // addCollectionAndDocuments('collections', map(({title, items}) => {
+            //     ({title, items})
+            // }));
         });
     }
 
